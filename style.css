@@ -1,0 +1,59 @@
+/*
+Theme name: MoHmady Portfolio
+Theme URI: 
+Author: Mohamed Hamdy
+Author URI: 
+License: GNU GPL v2
+License URI: http://gnu.org/licenses/gpl-2.0.html
+Description: Showcase your brilliance with MoHamdy portfolio theme.
+Version: 1.0
+Tags: portfolio, web, design, easy.
+Text domain: mohamdy
+Tested up to: 6.3
+Requires PHP: 7.3 or Later
+*/
+
+/* Tags in single.php */
+main .single-tags .post-tags a{
+    border-color: var(--trainary-color);
+}
+main .single-tags .post-tags a:hover{
+    background-color: var(--trainary-color);
+    border-color: var(--main-color);
+    color: var(--main-color);
+}
+
+
+/* 404.php */
+.not-found h2{
+    font-size: 90px;
+    font-weight: bolder;
+}
+
+/* Logo  */
+header nav a.navbar-brand img,
+footer .logo img,
+header nav .custom-logo-link .custom-logo{
+    max-width: 120px;
+    max-height: 40px;
+    padding: 5px;
+}
+
+
+/* Comments  */
+/* .comments-box{
+    border: 1px dashed #4f200c8a;
+    padding: 2rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.reply-title{
+    transform: translateY(-3rem);
+    color: var(--trainary-color);
+    background-color: var(--secondary-color);
+    width: fit-content;
+    padding: .5rem;
+    border-radius: 5pc;
+} */
