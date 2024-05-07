@@ -1,0 +1,46 @@
+.saqr-content p span {
+  text-shadow: 1px 1px 0 #444;
+  font-size: 1.2rem;
+}
+.saqr-content p {
+  font-size: 1rem;
+}
+.saqr-content ul span {
+  font-weight: bold;
+}
+.mohamdy-section-guide td img {
+  max-width: 100%;
+  max-height: 400px;
+}
+
+.mohamdy-action-cell {
+  min-width: 120px;
+}
+
+.madal-form {
+  width: fit-content;
+  margin: auto;
+}
+#delete-all .madal-form header h2 {
+  text-align: left;
+}
+#delete-all .madal-form p {
+  font-size: 18px;
+  line-height: 1;
+}
+
+
+.form-table td{
+  text-align: left;
+}
+
+
+
+.testimonial-dynamic-section td a img{
+  width: 100px;
+  border-radius: 50%;
+}
+.small-img{
+  width: 50px;
+  border-radius: 50%;
+}
