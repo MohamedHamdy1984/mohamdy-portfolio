@@ -2,11 +2,12 @@
 
 body{
     font-family: "Poppins", sans-serif;
+}
+.main-container{
     display: flex;
     overflow: hidden;
-    /* height: 100vh; */
+    position: relative;
 }
-
 :root{
     --main-color: rgb(96, 157, 159);
     --secondary-color: #4f200c; 
@@ -24,17 +25,17 @@ body{
     transition: all .5s;
     border: 1px solid;
 }
-.mohamdy-btn{
+.mohamdy-portfolio-btn{
     background-color: var(--secondary-color);
     color: var(--trainary-color);
     transition: all .3s;
 }
-.mohamdy-btn:hover{
+.mohamdy-portfolio-btn:hover{
     background-color: var(--trainary-color);
     border-color: var(--secondary-color);
     color: var(--secondary-color);
 }
-.mohamdy-color{
+.mohamdy-portfolio-color{
     color: var(--secondary-color);
 }
 .section-heading{
@@ -99,6 +100,7 @@ https://www.shapedivider.app/
     height: 100vh;
     background-color: var(--main-color);
     padding: .2rem;
+    position: fixed;
 }
 @media (max-width: 340px) {
     #sidebar{
@@ -153,9 +155,9 @@ https://www.shapedivider.app/
 
 /********************************************** main Content **********************************************/
 main{
-    overflow: auto;
+    /* overflow: auto; */
     position: relative;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     background-color: var(--trainary-color);
     min-height: 100vh;
     display: flex;
@@ -543,7 +545,7 @@ https://www.shapedivider.app/
     border-color: var(--main-color);
     color: var(--main-color);
 }
-#projects .modal .modal-footer button.mohamdy-btn:hover a{
+#projects .modal .modal-footer button.mohamdy-portfolio-btn:hover a{
     color: var(--secondary-color) !important;
 }
 #projects .modal .modal-footer button.close-btn:hover{
@@ -798,7 +800,7 @@ footer li{
     
     /********************************************** Start Comments section **********************************************/
     
-    /* .mohamdy-contact-btn {
+    /* .mohamdy-portfolio-contact-btn {
         background-color: var(--main-color);
         position: fixed;
         bottom: 30px;
@@ -809,7 +811,7 @@ footer li{
         padding: 7px;
         border-radius: 20px;
     }
-    .mohamdy-contact-btn:hover {
+    .mohamdy-portfolio-contact-btn:hover {
         background-color: var(--secondary-color);
         color: var(--trainary-color);
         transform: scale(1.1);

@@ -12,13 +12,14 @@ function customize_home_section($wp_customize)
     // main Image
     $wp_customize->add_setting('main_portfolio_image', [
         'default' => '',
+        'sanitize_callback' => 'absint',
         'transport' => 'postMessage',
     ]);
     $wp_customize->selective_refresh->add_partial('main_portfolio_image', [
         'selector' => '#home .photo',
         'container_inclusive' => false,
         'render_callback' => function () {
-            echo get_theme_mod('main_portfolio_image', '(Your Image)');
+            echo esc_url(get_theme_mod('main_portfolio_image', '(Your Image)'));
         }
     ]);
     $wp_customize->add_control(new WP_Customize_Media_Control(
@@ -34,15 +35,15 @@ function customize_home_section($wp_customize)
     // Portfolio name
     $wp_customize->add_setting('main_portfolio_name', [
         'default' => '',
-        'sanitize_callback' => 'mohamdy_sanitize',
-        'validate_callback' => 'mohamdy_main_portfolio_name_validate',
+        'sanitize_callback' => 'mohamdy_portfolio_sanitize',
+        'validate_callback' => 'mohamdy_portfolio_main_portfolio_name_validate',
         'transport' => 'postMessage',
     ]);
     $wp_customize->selective_refresh->add_partial('main_portfolio_name', [
         'selector' => '#home .welcome .title span#name',
         'container_inclusive' => false,
         'render_callback' => function () {
-            echo get_theme_mod('main_portfolio_name', '(Your name)');
+            echo esc_html(get_theme_mod('main_portfolio_name', '(Your name)'));
         }
     ]);
     $wp_customize->add_control('main_portfolio_name', [
@@ -55,15 +56,15 @@ function customize_home_section($wp_customize)
     // Job Title 
     $wp_customize->add_setting('job_title', [
         'default' => '',
-        'sanitize_callback' => 'mohamdy_sanitize',
-        'validate_callback' => 'mohamdy_main_portfolio_name_validate',
+        'sanitize_callback' => 'mohamdy_portfolio_sanitize',
+        'validate_callback' => 'mohamdy_portfolio_main_portfolio_name_validate',
         'transport' => 'postMessage',
     ]);
     $wp_customize->selective_refresh->add_partial('job_title', [
         'selector' => '#home .welcome .job-title .content__container__text',
         'container_inclusive' => false,
         'render_callback' => function () {
-            echo get_theme_mod('job_title', '(Your Title)');
+            echo esc_html(get_theme_mod('job_title', '(Your Title)'));
         }
     ]);
     $wp_customize->add_control('job_title', [
@@ -75,21 +76,22 @@ function customize_home_section($wp_customize)
     
     for ($x = 0; $x <= 5; $x++) {
 
-        $wp_customize->add_setting('mohamdy_skills['.$x.']', [
+        $wp_customize->add_setting('mohamdy_portfolio_skills['.$x.']', [
             'default' => '',
+            'sanitize_callback' => 'absint',
             'transport' => 'postMessage',
         ]);
-        $wp_customize->selective_refresh->add_partial('mohamdy_skills['.$x.']', [
+        $wp_customize->selective_refresh->add_partial('mohamdy_portfolio_skills['.$x.']', [
             'selector' => '#skill-'.$x,
             'container_inclusive' => true,
             'render_callback' => function () {
                 global $x;
-                echo '<img src="' . wp_get_attachment_image_url('mohamdy_skills['.$x.']') . '" id="skill-' . $x . '"> class="new"';
+                echo '<img src="' . wp_get_attachment_image_url('mohamdy_portfolio_skills['.$x.']') . '" id="skill-' . $x . '"> class="new"';
             }
         ]);
         $wp_customize->add_control(new WP_Customize_Media_Control(
             $wp_customize,
-            'mohamdy_skills['.$x.']',
+            'mohamdy_portfolio_skills['.$x.']',
             [
                 'label' => 'Add Skill image - '.$x+1,
                 'section' => 'home_section',
@@ -117,7 +119,7 @@ add_action('wp_head', function () {
 
 
 // Validation
-function mohamdy_main_portfolio_name_validate($validity, $main_portfolio_name)
+function mohamdy_portfolio_main_portfolio_name_validate($validity, $main_portfolio_name)
 {
     if (mb_strlen($main_portfolio_name) > 25) {
         $validity->add('invalid_main_portfolio_name', 'Main Portfolio Name can\'t be more than 25 characters');

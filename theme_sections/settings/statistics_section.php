@@ -8,7 +8,7 @@ $statistics_settings = [
 $statistics_section = [
     [
         'id'       => 'statistics_section',
-        'title'    => __('Clearly communicate the value you offer to clients.', 'mohamdy'),
+        'title'    => __('Clearly communicate the value you offer to clients.', 'mohamdy-portfolio'),
         'callback' => '',
         'page'     => 'statistics_section_content'
     ],
@@ -23,20 +23,20 @@ $statistics_section = [
 $statistics_fields = [
     [
         'id'       => 'statistics_section_guide',
-        'title'    => __('statistics Section Example', 'mohamdy'),
-        'callback' => 'mohamdy_section_guide_callback',
+        'title'    => __('statistics Section Example', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_section_guide_callback',
         'page'     => 'statistics_section_content',
         'section'  => 'statistics_section',
         'args'     => [
             'label_for'   => 'statistics_section_guide',
-            'class'       => 'mohamdy-section-guide',
+            'class'       => 'mohamdy-portfolio-section-guide',
             'option_name' => 'statistics_options',
         ]
     ],
     [
         'id'       => 'show_statistics_section',
-        'title'    => __('Show statistics Section', 'mohamdy'),
-        'callback' => 'mohamdy_checkbox_element_callback',
+        'title'    => __('Show statistics Section', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_checkbox_element_callback',
         'page'     => 'statistics_section_content',
         'section'  => 'statistics_section',
         'args'     => [
@@ -46,8 +46,8 @@ $statistics_fields = [
     ],
     [
         'id' => 'statistics_section_title',
-        'title'  => __('Add Section Title', 'mohamdy'),
-        'callback' => 'mohamdy_text_element_callback',
+        'title'  => __('Add Section Title', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_text_element_callback',
         'page'  => 'statistics_section_content',
         'section'  => 'statistics_section',
         'args'     => [
@@ -58,8 +58,8 @@ $statistics_fields = [
     ],
     [
         'id' => 'statistics_section_icon',
-        'title'  => __('Add Section Icon', 'mohamdy'),
-        'callback' => 'mohamdy_text_element_callback',
+        'title'  => __('Add Section Icon', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_text_element_callback',
         'page'  => 'statistics_section_content',
         'section'  => 'statistics_section',
         'args'     => [
@@ -73,8 +73,8 @@ $statistics_fields = [
 $statistics_dynamic_fields = [
     [
         'id' => 'statistic_name',
-        'title'  => __('Add Statistic Name *', 'mohamdy'),
-        'callback' => 'mohamdy_text_element_callback',
+        'title'  => __('Add Statistic Name *', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_text_element_callback',
         'page'  => 'statistics_section_content',
         'section'  => 'statistics_dynamic_section',
         'args'     => [
@@ -87,8 +87,8 @@ $statistics_dynamic_fields = [
     ],
     [
         'id' => 'statistic',
-        'title'  => __('Add statistic', 'mohamdy'),
-        'callback' => 'mohamdy_num_element_callback',
+        'title'  => __('Add statistic', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_num_element_callback',
         'page'  => 'statistics_section_content',
         'section'  => 'statistics_dynamic_section',
         'args'     => [
@@ -102,8 +102,8 @@ $statistics_dynamic_fields = [
     ],
     [
         'id' => 'statistic_icon',
-        'title'  => __('Add statistic Icon', 'mohamdy'),
-        'callback' => 'mohamdy_text_element_callback',
+        'title'  => __('Add statistic Icon', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_text_element_callback',
         'page'  => 'statistics_section_content',
         'section'  => 'statistics_dynamic_section',
         'args'     => [

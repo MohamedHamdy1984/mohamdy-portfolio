@@ -2,12 +2,12 @@
 
 // Callback for testimonials section page
 
-if (!function_exists('mohamdy_testimonials_page_cb')) {
-    function mohamdy_testimonials_page_cb()
+if (!function_exists('mohamdy_portfolio_testimonials_page_cb')) {
+    function mohamdy_portfolio_testimonials_page_cb()
     {
         $testimonials_options = get_option('testimonials_options', []);
 ?>
-        <h2 class="w3-panel w3-flat-belize-hole w3-flat-emerald w3-center"><?php _e('My testimonials Section Settings', 'mohamdy'); ?></h2>
+        <h2 class="w3-panel w3-flat-belize-hole w3-flat-emerald w3-center"><?php _e('My testimonials Section Settings', 'mohamdy-portfolio'); ?></h2>
         <?php settings_errors(); ?>
         <form action="options.php" method="post">
             <?php
@@ -20,24 +20,24 @@ if (!function_exists('mohamdy_testimonials_page_cb')) {
         </form>
 
         <div class="w3-container">
-            <h2><?php _e('testimonials Table', 'mohamdy'); ?></h2>
+            <h2><?php _e('testimonials Table', 'mohamdy-portfolio'); ?></h2>
 
             <table class="w3-table-all w3-hoverable">
                 <thead>
                     <tr class="w3-light-grey">
-                        <th><?php _e('no.', 'mohamdy'); ?></th>
-                        <th><?php _e('Client Name', 'mohamdy'); ?></th>
-                        <th><?php _e('Client Photo', 'mohamdy'); ?></th>
-                        <th><?php _e('Job Title', 'mohamdy'); ?></th>
-                        <th><?php _e('Client rate', 'mohamdy'); ?></th>
-                        <th><?php _e('Client review', 'mohamdy'); ?></th>
-                        <th><?php _e('Action', 'mohamdy'); ?></th>
+                        <th><?php _e('no.', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Client Name', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Client Photo', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Job Title', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Client rate', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Client review', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Action', 'mohamdy-portfolio'); ?></th>
                     </tr>
                 </thead>
                 <div class="w3-bar w3-margin-bottom">
                     <!-- Trigger/Open the Modal -->
-                    <button onclick="document.getElementById('add-testimonial').style.display='block'" class="w3-button w3-flat-belize-hole w3-round w3-small w3-margin-right w3-margin-left"><?php _e('Add testimonial', 'mohamdy'); ?></button>
-                    <button onclick="document.getElementById('delete-all').style.display='block'" class="w3-button w3-flat-pomegranate w3-round w3-small w3-margin-right w3-margin-right"><?php _e('Delete All testimonials', 'mohamdy'); ?></button>
+                    <button onclick="document.getElementById('add-testimonial').style.display='block'" class="w3-button w3-flat-belize-hole w3-round w3-small w3-margin-right w3-margin-left"><?php _e('Add testimonial', 'mohamdy-portfolio'); ?></button>
+                    <button onclick="document.getElementById('delete-all').style.display='block'" class="w3-button w3-flat-pomegranate w3-round w3-small w3-margin-right w3-margin-right"><?php _e('Delete All testimonials', 'mohamdy-portfolio'); ?></button>
                 </div>
                 <?php
                 $i = 1;
@@ -52,19 +52,19 @@ if (!function_exists('mohamdy_testimonials_page_cb')) {
                     echo '<td>' . $value['client_review'] . '</td>';
 
                     /*Action Table cell for  Delete & Edit buttons**/
-                    echo '<td class="mohamdy-action-cell">';
+                    echo '<td class="mohamdy-portfolio-action-cell">';
 
                     /** A Form for Edit testimonial */
                     echo '<form method="post" action="" class="w3-show-inline-block">';
                     echo '<input type="hidden" name="edit" value="' . $value['client_name'] . '">';
-                    submit_button(__('Edit', 'mohamdy'), 'primary small', 'submit', false);
+                    submit_button(__('Edit', 'mohamdy-portfolio'), 'primary small', 'submit', false);
                     echo '</form> ';
 
                     /*A Form for delete testimonial**/
                     echo '<form action="options.php" method="post" class="w3-show-inline-block">';
                     settings_fields('testimonials_section_content');
                     echo '<input type="hidden" name="remove" value="' . $value['client_name'] . '">';
-                    submit_button(__('Delete', 'mohamdy'), 'delete small', 'submit', false, [
+                    submit_button(__('Delete', 'mohamdy-portfolio'), 'delete small', 'submit', false, [
                         'onclick' => 'return confirm("Are you sure you want to delete this testimonial? ");'
                     ]);
                     echo  '</form>
@@ -90,7 +90,7 @@ if (!function_exists('mohamdy_testimonials_page_cb')) {
                     <div class="w3-modal-content w3-animate-zoom w3-card-4">
                         <header class="w3-container w3-flat-clouds">
                             <span onclick="document.getElementById('add-testimonial').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                            <h2><?php _e('Add testimonial', 'mohamdy'); ?></h2>
+                            <h2><?php _e('Add testimonial', 'mohamdy-portfolio'); ?></h2>
                         </header>
                         <div class="w3-container">
                             <?php
@@ -105,9 +105,9 @@ if (!function_exists('mohamdy_testimonials_page_cb')) {
                         <footer class="w3-container w3-flat-clouds">
                             <?php
                             if (isset($_POST['edit'])) {
-                                submit_button(__('Edit testimonial', 'mohamdy'), 'primary w3-margin w3-right', 'submit', false);
+                                submit_button(__('Edit testimonial', 'mohamdy-portfolio'), 'primary w3-margin w3-right', 'submit', false);
                             } else {
-                                submit_button(__('Add testimonial', 'mohamdy'), 'primary w3-margin w3-right', 'submit', false);
+                                submit_button(__('Add testimonial', 'mohamdy-portfolio'), 'primary w3-margin w3-right', 'submit', false);
                             }
                             ?>
                         </footer>
@@ -122,7 +122,7 @@ if (!function_exists('mohamdy_testimonials_page_cb')) {
                     <div class="w3-modal-content w3-animate-zoom w3-card-4">
                         <header class="w3-container w3-flat-clouds">
                             <span onclick="document.getElementById('delete-all').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                            <h2><?php _e('Delete All testimonials', 'mohamdy'); ?></h2>
+                            <h2><?php _e('Delete All testimonials', 'mohamdy-portfolio'); ?></h2>
                         </header>
                         <div class="w3-container w3-center">
                             <?php
@@ -138,7 +138,7 @@ if (!function_exists('mohamdy_testimonials_page_cb')) {
                         </div>
                         <footer class="w3-container w3-flat-clouds">
                             <?php
-                            submit_button(__('Delete All testimonials', 'mohamdy'), 'primary w3-margin w3-right', 'submit', false);
+                            submit_button(__('Delete All testimonials', 'mohamdy-portfolio'), 'primary w3-margin w3-right', 'submit', false);
                             ?>
                         </footer>
                     </div>
@@ -189,9 +189,9 @@ if (!function_exists('testimonials_sanitize_cb')) {
         if (isset($_POST['dynamic'])) {
 
             if ( isset($input['client_name']) ) {
-                $input['client_name'] = ($input['client_name']) ? sanitize_text_field($input['client_name']) : wp_die('Client name is required');
+                $input['client_name'] = ($input['client_name']) ? sanitize_text_field($input['client_name']) : wp_die(__('Client name is required', 'mohamdy-portfolio'));
             } else {
-                wp_die('Client name is required');
+                wp_die(__('Client name is required', 'mohamdy-portfolio'));
             }
 
 
@@ -201,7 +201,7 @@ if (!function_exists('testimonials_sanitize_cb')) {
             $testimonial_lowercase = strtolower($input['client_name']);
 
             if (array_key_exists($testimonial_lowercase, $option_keys_lowercase) && $_POST['submit'] != 'Edit testimonial') {
-                wp_die(__('testimonial already exist'), 'mohamdy');
+                wp_die(__('testimonial already exist', 'mohamdy-portfolio'));
             }
 
             if (isset($input['client_photo'])) {
@@ -229,7 +229,7 @@ if (!function_exists('testimonials_sanitize_cb')) {
             $option['show_testimonials_section'] = 0;
         }
 
-        $option['testimonials_section_title'] = isset($input['testimonials_section_title']) ? sanitize_text_field($input['testimonials_section_title']) : wp_die('Section Title is required');
+        $option['testimonials_section_title'] = isset($input['testimonials_section_title']) ? sanitize_text_field($input['testimonials_section_title']) : wp_die(__('Section Title is required', 'mohamdy-portfolio'));
 
 
         $option['testimonials_section_intro'] = sanitize_textarea_field($input['testimonials_section_intro']);

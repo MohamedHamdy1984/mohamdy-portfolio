@@ -5,8 +5,8 @@ require 'sanitize_field.php';
 
 
 
-if(!function_exists('mohamdy_customize_register')){
-    function mohamdy_customize_register($wp_customize){
+if(!function_exists('mohamdy_portfolio_customize_register')){
+    function mohamdy_portfolio_customize_register($wp_customize){
 
         customize_footer($wp_customize);
 
@@ -14,6 +14,6 @@ if(!function_exists('mohamdy_customize_register')){
 
 
     }
-    add_action('customize_register', 'mohamdy_customize_register');
+    add_action('customize_register', 'mohamdy_portfolio_customize_register');
 }
 

@@ -48,7 +48,7 @@
             } 
             ?>
             <p class="card-text"><?php echo $project_excerpt; ?></p>
-            <button type="button" class="btn mohamdy-btn" data-bs-toggle="modal" data-bs-target="#card<?php echo $i;?>Modal">
+            <button type="button" class="btn mohamdy-portfolio-btn" data-bs-toggle="modal" data-bs-target="#card<?php echo $i;?>Modal">
                 More Details
             </button>
         </div>
@@ -68,8 +68,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary close-btn" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn mohamdy-btn"><a class="text-light" target="_blank" href="<?php echo get_permalink(); ?>">Go to Project page</a></button>
-                <!-- <button type="button" class="btn btn-primary"><a href="<?php //echo get_permalink(); ?>">Go to Project</a></button> -->
+                <button type="button" class="btn mohamdy-portfolio-btn"><a class="text-light" target="_blank" href="<?php echo get_permalink(); ?>">Go to Project page</a></button>
             </div>
             </div>
         </div>

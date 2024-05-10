@@ -11,8 +11,8 @@ function customize_footer($wp_customize){
     // Copyrights
     $wp_customize->add_setting('footer_copy_rights', [
         'default' => '',
-        'sanitize_callback' => 'mohamdy_sanitize',
-        'validate_callback' => 'mohamdy_footer_copy_rights_validate',
+        'sanitize_callback' => 'mohamdy_portfolio_sanitize',
+        'validate_callback' => 'mohamdy_portfolio_footer_copy_rights_validate',
         'transport' => 'postMessage',
     ]);
     $wp_customize->selective_refresh->add_partial('footer_copy_rights', [
@@ -32,7 +32,7 @@ function customize_footer($wp_customize){
 
 
 
-function mohamdy_footer_copy_rights_validate($validity, $footer_copy_rights)
+function mohamdy_portfolio_footer_copy_rights_validate($validity, $footer_copy_rights)
 {
     if (mb_strlen($footer_copy_rights) > 100) {
         $validity->add('invalid_footer_copy_rights', 'Footer Copy Rights can\'t be more than 100 character');

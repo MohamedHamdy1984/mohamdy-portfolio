@@ -52,7 +52,7 @@ if ($services_options && $show_services_section) {
                                 if ($services_section_image) {
                                     echo wp_get_attachment_image_url($services_section_image, 'medium');
                                 } else {
-                                    echo get_template_directory_uri() . '/assets/img/services/web-design-4875186_640.jpg';
+                                    echo esc_url(get_template_directory_uri()) . '/assets/img/services/web-design-4875186_640.jpg';
                                 } ?>" alt="" class="img-fluid">
                 </div>
             </div>

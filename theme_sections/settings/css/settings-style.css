@@ -8,12 +8,12 @@
 .saqr-content ul span {
   font-weight: bold;
 }
-.mohamdy-section-guide td img {
+.mohamdy-portfolio-section-guide td img {
   max-width: 100%;
   max-height: 400px;
 }
 
-.mohamdy-action-cell {
+.mohamdy-portfolio-action-cell {
   min-width: 120px;
 }
 

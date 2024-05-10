@@ -2,12 +2,12 @@
 
 // Callback for Service section page
 
-if (!function_exists('mohamdy_services_page_cb')) {
-    function mohamdy_services_page_cb()
+if (!function_exists('mohamdy_portfolio_services_page_cb')) {
+    function mohamdy_portfolio_services_page_cb()
     {
         $services_options = get_option('services_options', []);
         ?>
-        <h2 class="w3-panel w3-flat-belize-hole w3-flat-emerald w3-center"><?php _e('My Services Section Settings', 'mohamdy'); ?></h2>
+        <h2 class="w3-panel w3-flat-belize-hole w3-flat-emerald w3-center"><?php _e('My Services Section Settings', 'mohamdy-portfolio'); ?></h2>
         <?php settings_errors(); ?>
         <form action="options.php" method="post">
             <?php
@@ -20,22 +20,22 @@ if (!function_exists('mohamdy_services_page_cb')) {
         </form>
 
         <div class="w3-container">
-            <h2><?php _e('Services Table', 'mohamdy'); ?></h2>
+            <h2><?php _e('Services Table', 'mohamdy-portfolio'); ?></h2>
 
             <table class="w3-table-all w3-hoverable">
                 <thead>
                     <tr class="w3-light-grey">
-                        <th><?php _e('no.', 'mohamdy'); ?></th>
-                        <th><?php _e('Service Name', 'mohamdy'); ?></th>
-                        <th><?php _e('Service detail', 'mohamdy'); ?></th>
-                        <th><?php _e('Service Description', 'mohamdy'); ?></th>
-                        <th><?php _e('Action', 'mohamdy'); ?></th>
+                        <th><?php _e('no.', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Service Name', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Service detail', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Service Description', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Action', 'mohamdy-portfolio'); ?></th>
                     </tr>
                 </thead>
                 <div class="w3-bar w3-margin-bottom">
                     <!-- Trigger/Open the Modal -->
-                    <button onclick="document.getElementById('add-services').style.display='block'" class="w3-button w3-flat-belize-hole w3-round w3-small w3-margin-right w3-margin-left"><?php _e('Add Service', 'mohamdy'); ?></button>
-                    <button onclick="document.getElementById('delete-all').style.display='block'" class="w3-button w3-flat-pomegranate w3-round w3-small w3-margin-right w3-margin-right"><?php _e('Delete All Services', 'mohamdy'); ?></button>
+                    <button onclick="document.getElementById('add-services').style.display='block'" class="w3-button w3-flat-belize-hole w3-round w3-small w3-margin-right w3-margin-left"><?php _e('Add Service', 'mohamdy-portfolio'); ?></button>
+                    <button onclick="document.getElementById('delete-all').style.display='block'" class="w3-button w3-flat-pomegranate w3-round w3-small w3-margin-right w3-margin-right"><?php _e('Delete All Services', 'mohamdy-portfolio'); ?></button>
                 </div>
                 <?php
                 $i = 1 ;
@@ -48,19 +48,19 @@ if (!function_exists('mohamdy_services_page_cb')) {
                     echo '<td>' . $value['service_description'] . '</td>';
 
                     /*Action Table cell for  Delete & Edit buttons**/
-                    echo '<td class="mohamdy-action-cell">'; 
+                    echo '<td class="mohamdy-portfolio-action-cell">'; 
 
                     /** A Form for Edit service */
                     echo '<form method="post" action="" class="w3-show-inline-block">';
                     echo '<input type="hidden" name="edit" value="'.$value['service_name'].'">';
-                    submit_button(__('Edit', 'mohamdy'), 'primary small', 'submit', false);
+                    submit_button(__('Edit', 'mohamdy-portfolio'), 'primary small', 'submit', false);
                     echo '</form> ';
 
                     /*A Form for delete service**/
                     echo '<form action="options.php" method="post" class="w3-show-inline-block">';
                     settings_fields('services_section_content');
                     echo '<input type="hidden" name="remove" value="'.$value['service_name'] .'">';
-                    submit_button(__('Delete', 'mohamdy'), 'delete small', 'submit', false, [
+                    submit_button(__('Delete', 'mohamdy-portfolio'), 'delete small', 'submit', false, [
                             'onclick' => 'return confirm("Are you sure you want to delete this Service? ");'
                         ]);
                     echo  '</form>
@@ -86,7 +86,7 @@ if (!function_exists('mohamdy_services_page_cb')) {
                     <div class="w3-modal-content w3-animate-zoom w3-card-4">
                         <header class="w3-container w3-flat-clouds">
                             <span onclick="document.getElementById('add-services').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                            <h2><?php _e('Add Service', 'mohamdy'); ?></h2>
+                            <h2><?php _e('Add Service', 'mohamdy-portfolio'); ?></h2>
                         </header>
                         <div class="w3-container">
                             <?php
@@ -101,9 +101,9 @@ if (!function_exists('mohamdy_services_page_cb')) {
                         <footer class="w3-container w3-flat-clouds">
                             <?php
                             if(isset($_POST['edit'])){
-                                submit_button(__('Edit Service', 'mohamdy'), 'primary w3-margin w3-right', 'submit', false); 
+                                submit_button(__('Edit Service', 'mohamdy-portfolio'), 'primary w3-margin w3-right', 'submit', false); 
                             }else{
-                                submit_button(__('Add Service', 'mohamdy'), 'primary w3-margin w3-right', 'submit', false); 
+                                submit_button(__('Add Service', 'mohamdy-portfolio'), 'primary w3-margin w3-right', 'submit', false); 
                             }
                             ?>
                         </footer>
@@ -118,7 +118,7 @@ if (!function_exists('mohamdy_services_page_cb')) {
                     <div class="w3-modal-content w3-animate-zoom w3-card-4">
                         <header class="w3-container w3-flat-clouds">
                             <span onclick="document.getElementById('delete-all').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                            <h2><?php _e('Delete All Services', 'mohamdy'); ?></h2>
+                            <h2><?php _e('Delete All Services', 'mohamdy-portfolio'); ?></h2>
                         </header>
                         <div class="w3-container w3-center">
                             <?php
@@ -134,7 +134,7 @@ if (!function_exists('mohamdy_services_page_cb')) {
                         </div>
                         <footer class="w3-container w3-flat-clouds">
                             <?php
-                                submit_button(__('Delete All Services', 'mohamdy'), 'primary w3-margin w3-right', 'submit', false); 
+                                submit_button(__('Delete All Services', 'mohamdy-portfolio'), 'primary w3-margin w3-right', 'submit', false); 
                             ?>
                         </footer>
                     </div>
@@ -184,9 +184,9 @@ if (!function_exists('services_sanitize_cb')) {
         if(isset($_POST['dynamic'])){
 
             if ( isset($input['service_name']) ) {
-                $input['service_name'] = ($input['service_name'])? sanitize_text_field($input['service_name']) : wp_die('Service name is required');
+                $input['service_name'] = ($input['service_name'])? sanitize_text_field($input['service_name']) : wp_die(__('Service name is required', 'mohamdy-portfolio'));
             } else {
-                wp_die('Service name is required');
+                wp_die(__('Service name is required', 'mohamdy-portfolio'));
             }
 
 
@@ -194,7 +194,7 @@ if (!function_exists('services_sanitize_cb')) {
             $service_lowercase = strtolower( $input['service_name'] );
 
             if(array_key_exists( $service_lowercase , $option_keys_lowercase ) && $_POST['submit'] != 'Edit Service' ){
-                wp_die(__('Service already exist'), 'mohamdy');
+                wp_die(__('Service already exist', 'mohamdy-portfolio'));
             }
 
             $input['service_detail'] = sanitize_text_field($input['service_detail']);
@@ -215,19 +215,18 @@ if (!function_exists('services_sanitize_cb')) {
             $option['show_services_section'] = 0;
         }
 
-        $option['services_section_title'] = isset($input['services_section_title'])? sanitize_text_field($input['services_section_title']) : wp_die('Section Title is required');
+        $option['services_section_title'] = isset($input['services_section_title'])? sanitize_text_field($input['services_section_title']) : wp_die(__('Section Title is required', 'mohamdy-portfolio'));
 
         $option['services_section_image'] = absint($input['services_section_image']);
 
         $option['services_section_intro'] = sanitize_textarea_field($input['services_section_intro']);
         
-        // $option['services_section_icon'] = $input['services_section_icon'];
+
 
         $option['services_section_icon'] = preg_replace('/^<i class="/', '', $input['services_section_icon']);
 
         $option['services_section_icon'] = preg_replace('/"><\/i>$/', '', $option['services_section_icon']);
-        // echo $option['services_section_icon'];
-        // wp_die();
+
         $option['services_section_icon'] = sanitize_text_field($option['services_section_icon']);
         
         return $option;

@@ -2,8 +2,8 @@
 
 
 
-if (!function_exists('mohamdy_saqr_page_cb')) {
-    function mohamdy_saqr_page_cb()
+if (!function_exists('mohamdy_portfolio_saqr_page_cb')) {
+    function mohamdy_portfolio_saqr_page_cb()
     {
 
     ?>

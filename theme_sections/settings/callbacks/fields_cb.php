@@ -1,8 +1,8 @@
 <?php
 // Callbacks for settings
 // Fields Element Callbacks
-if (!function_exists('mohamdy_section_guide_callback')) {
-    function mohamdy_section_guide_callback($args)
+if (!function_exists('mohamdy_portfolio_section_guide_callback')) {
+    function mohamdy_portfolio_section_guide_callback($args)
     {
         $field_id = $args['label_for'];
         $image_url = '';
@@ -18,14 +18,14 @@ if (!function_exists('mohamdy_section_guide_callback')) {
                 break;
         }
 ?>
-        <img src="<?php echo get_template_directory_uri() . $image_url?>" alt="<?php echo $field_id; ?>">
+        <img src="<?php echo esc_url(get_template_directory_uri()) . $image_url?>" alt="<?php echo $field_id; ?>">
     <?php
     }
 }
 
 
-if (!function_exists('mohamdy_checkbox_element_callback')) {
-    function mohamdy_checkbox_element_callback($args)
+if (!function_exists('mohamdy_portfolio_checkbox_element_callback')) {
+    function mohamdy_portfolio_checkbox_element_callback($args)
     {
         $field_id = $args['label_for'];
         $option_name = $args['option_name'];
@@ -43,8 +43,8 @@ if (!function_exists('mohamdy_checkbox_element_callback')) {
     }
 }
 
-if (!function_exists('mohamdy_text_element_callback')) {
-    function mohamdy_text_element_callback($args)
+if (!function_exists('mohamdy_portfolio_text_element_callback')) {
+    function mohamdy_portfolio_text_element_callback($args)
     {
         $field_id = isset($args['label_for']) ? $args['label_for'] : '';
         $option_name = isset($args['option_name']) ? $args['option_name'] : '';
@@ -82,8 +82,8 @@ if (!function_exists('mohamdy_text_element_callback')) {
 
 
 
-if (!function_exists('mohamdy_num_element_callback')) {
-    function mohamdy_num_element_callback($args)
+if (!function_exists('mohamdy_portfolio_num_element_callback')) {
+    function mohamdy_portfolio_num_element_callback($args)
     {
         $field_id = isset($args['label_for']) ? $args['label_for'] : '';
         $option_name = isset($args['option_name']) ? $args['option_name'] : '';
@@ -121,8 +121,8 @@ if (!function_exists('mohamdy_num_element_callback')) {
 
 
 
-if (!function_exists('mohamdy_textarea_element_callback')) {
-    function mohamdy_textarea_element_callback($args)
+if (!function_exists('mohamdy_portfolio_textarea_element_callback')) {
+    function mohamdy_portfolio_textarea_element_callback($args)
     {
         $field_id = isset($args['label_for']) ? $args['label_for'] : '';
         $option_name = isset($args['option_name']) ? $args['option_name'] : '';
@@ -148,8 +148,8 @@ if (!function_exists('mohamdy_textarea_element_callback')) {
     }
 }
 
-if (!function_exists('mohamdy_image_element_callback')) {
-    function mohamdy_image_element_callback($args)
+if (!function_exists('mohamdy_portfolio_image_element_callback')) {
+    function mohamdy_portfolio_image_element_callback($args)
     {
         $field_id = isset($args['label_for']) ? $args['label_for'] : '';
         $option_name = isset($args['option_name']) ? $args['option_name'] : '';

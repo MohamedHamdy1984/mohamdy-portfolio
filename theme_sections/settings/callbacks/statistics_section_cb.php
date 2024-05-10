@@ -2,12 +2,12 @@
 
 // Callback for statistics section page
 
-if (!function_exists('mohamdy_statistics_page_cb')) {
-    function mohamdy_statistics_page_cb()
+if (!function_exists('mohamdy_portfolio_statistics_page_cb')) {
+    function mohamdy_portfolio_statistics_page_cb()
     {
         $statistics_options = get_option('statistics_options', []);
 ?>
-        <h2 class="w3-panel w3-flat-belize-hole w3-flat-emerald w3-center"><?php _e('My statistics Section Settings', 'mohamdy'); ?></h2>
+        <h2 class="w3-panel w3-flat-belize-hole w3-flat-emerald w3-center"><?php _e('My statistics Section Settings', 'mohamdy-portfolio'); ?></h2>
         <?php settings_errors(); ?>
         <form action="options.php" method="post">
             <?php
@@ -20,22 +20,22 @@ if (!function_exists('mohamdy_statistics_page_cb')) {
         </form>
 
         <div class="w3-container">
-            <h2><?php _e('statistics Table', 'mohamdy'); ?></h2>
+            <h2><?php _e('statistics Table', 'mohamdy-portfolio'); ?></h2>
 
             <table class="w3-table-all w3-hoverable">
                 <thead>
                     <tr class="w3-light-grey">
-                        <th><?php _e('no.', 'mohamdy'); ?></th>
-                        <th><?php _e('Statistic Name', 'mohamdy'); ?></th>
-                        <th><?php _e('Statistic', 'mohamdy'); ?></th>
-                        <th><?php _e('Statistic icon', 'mohamdy'); ?></th>
-                        <th><?php _e('Action', 'mohamdy'); ?></th>
+                        <th><?php _e('no.', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Statistic Name', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Statistic', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Statistic icon', 'mohamdy-portfolio'); ?></th>
+                        <th><?php _e('Action', 'mohamdy-portfolio'); ?></th>
                     </tr>
                 </thead>
                 <div class="w3-bar w3-margin-bottom">
                     <!-- Trigger/Open the Modal -->
-                    <button onclick="document.getElementById('add-statistic').style.display='block'" class="w3-button w3-flat-belize-hole w3-round w3-small w3-margin-right w3-margin-left"><?php _e('Add statistic', 'mohamdy'); ?></button>
-                    <button onclick="document.getElementById('delete-all').style.display='block'" class="w3-button w3-flat-pomegranate w3-round w3-small w3-margin-right w3-margin-right"><?php _e('Delete All statistics', 'mohamdy'); ?></button>
+                    <button onclick="document.getElementById('add-statistic').style.display='block'" class="w3-button w3-flat-belize-hole w3-round w3-small w3-margin-right w3-margin-left"><?php _e('Add statistic', 'mohamdy-portfolio'); ?></button>
+                    <button onclick="document.getElementById('delete-all').style.display='block'" class="w3-button w3-flat-pomegranate w3-round w3-small w3-margin-right w3-margin-right"><?php _e('Delete All statistics', 'mohamdy-portfolio'); ?></button>
                 </div>
                 <?php
                 $i = 1;
@@ -48,19 +48,19 @@ if (!function_exists('mohamdy_statistics_page_cb')) {
                     echo '<td>' . $value['statistic_icon'] . '</td>';
 
                     /*Action Table cell for  Delete & Edit buttons**/
-                    echo '<td class="mohamdy-action-cell">';
+                    echo '<td class="mohamdy-portfolio-action-cell">';
 
                     /** A Form for Edit statistic */
                     echo '<form method="post" action="" class="w3-show-inline-block">';
                     echo '<input type="hidden" name="edit" value="' . $value['statistic_name'] . '">';
-                    submit_button(__('Edit', 'mohamdy'), 'primary small', 'submit', false);
+                    submit_button(__('Edit', 'mohamdy-portfolio'), 'primary small', 'submit', false);
                     echo '</form> ';
 
                     /*A Form for delete statistic**/
                     echo '<form action="options.php" method="post" class="w3-show-inline-block">';
                     settings_fields('statistics_section_content');
                     echo '<input type="hidden" name="remove" value="' . $value['statistic_name'] . '">';
-                    submit_button(__('Delete', 'mohamdy'), 'delete small', 'submit', false, [
+                    submit_button(__('Delete', 'mohamdy-portfolio'), 'delete small', 'submit', false, [
                         'onclick' => 'return confirm("Are you sure you want to delete this statistic? ");'
                     ]);
                     echo  '</form>
@@ -86,7 +86,7 @@ if (!function_exists('mohamdy_statistics_page_cb')) {
                     <div class="w3-modal-content w3-animate-zoom w3-card-4">
                         <header class="w3-container w3-flat-clouds">
                             <span onclick="document.getElementById('add-statistic').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                            <h2><?php _e('Add statistic', 'mohamdy'); ?></h2>
+                            <h2><?php _e('Add statistic', 'mohamdy-portfolio'); ?></h2>
                         </header>
                         <div class="w3-container">
                             <?php
@@ -101,9 +101,9 @@ if (!function_exists('mohamdy_statistics_page_cb')) {
                         <footer class="w3-container w3-flat-clouds">
                             <?php
                             if (isset($_POST['edit'])) {
-                                submit_button(__('Edit statistic', 'mohamdy'), 'primary w3-margin w3-right', 'submit', false);
+                                submit_button(__('Edit statistic', 'mohamdy-portfolio'), 'primary w3-margin w3-right', 'submit', false);
                             } else {
-                                submit_button(__('Add statistic', 'mohamdy'), 'primary w3-margin w3-right', 'submit', false);
+                                submit_button(__('Add statistic', 'mohamdy-portfolio'), 'primary w3-margin w3-right', 'submit', false);
                             }
                             ?>
                         </footer>
@@ -118,7 +118,7 @@ if (!function_exists('mohamdy_statistics_page_cb')) {
                     <div class="w3-modal-content w3-animate-zoom w3-card-4">
                         <header class="w3-container w3-flat-clouds">
                             <span onclick="document.getElementById('delete-all').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                            <h2><?php _e('Delete All statistics', 'mohamdy'); ?></h2>
+                            <h2><?php _e('Delete All statistics', 'mohamdy-portfolio'); ?></h2>
                         </header>
                         <div class="w3-container w3-center">
                             <?php
@@ -134,7 +134,7 @@ if (!function_exists('mohamdy_statistics_page_cb')) {
                         </div>
                         <footer class="w3-container w3-flat-clouds">
                             <?php
-                            submit_button(__('Delete All statistics', 'mohamdy'), 'primary w3-margin w3-right', 'submit', false);
+                            submit_button(__('Delete All statistics', 'mohamdy-portfolio'), 'primary w3-margin w3-right', 'submit', false);
                             ?>
                         </footer>
                     </div>
@@ -185,9 +185,9 @@ if (!function_exists('statistics_sanitize_cb')) {
         if (isset($_POST['dynamic'])) {
 
             if ( isset($input['statistic_name']) ) {
-                $input['statistic_name'] = ($input['statistic_name']) ? sanitize_text_field($input['statistic_name']) : wp_die('statistic name is required');
+                $input['statistic_name'] = ($input['statistic_name']) ? sanitize_text_field($input['statistic_name']) : wp_die(__('statistic name is required', 'mohamdy-portfolio'));
             } else {
-                wp_die('statistic name is required');
+                wp_die(__('statistic name is required', 'mohamdy-portfolio'));
             }
 
 
@@ -197,7 +197,7 @@ if (!function_exists('statistics_sanitize_cb')) {
             $statistic_lowercase = strtolower($input['statistic_name']);
 
             if (array_key_exists($statistic_lowercase, $option_keys_lowercase) && $_POST['submit'] != 'Edit statistic') {
-                wp_die(__('statistic already exist'), 'mohamdy');
+                wp_die(__('statistic already exist', 'mohamdy-portfolio'));
             }
 
             $input['statistic'] = absint($input['statistic']);
@@ -220,7 +220,7 @@ if (!function_exists('statistics_sanitize_cb')) {
             $option['show_statistics_section'] = 0;
         }
 
-        $option['statistics_section_title'] = isset($input['statistics_section_title']) ? sanitize_text_field($input['statistics_section_title']) : wp_die('Section Title is required');
+        $option['statistics_section_title'] = isset($input['statistics_section_title']) ? sanitize_text_field($input['statistics_section_title']) : wp_die(__('Section Title is required', 'mohamdy-portfolio'));
 
 
         $option['statistics_section_icon'] = preg_replace('/^<i class="/', '', $input['statistics_section_icon']);

@@ -8,7 +8,7 @@ $testimonials_settings = [
 $testimonials_section = [
     [
         'id'       => 'testimonials_section',
-        'title'    => __('Clearly communicate the value you offer to clients.', 'mohamdy'),
+        'title'    => __('Clearly communicate the value you offer to clients.', 'mohamdy-portfolio'),
         'callback' => '',
         'page'     => 'testimonials_section_content'
     ],
@@ -23,20 +23,20 @@ $testimonials_section = [
 $testimonials_fields = [
     [
         'id'       => 'testimonials_section_guide',
-        'title'    => __('testimonials Section Example', 'mohamdy'),
-        'callback' => 'mohamdy_section_guide_callback',
+        'title'    => __('testimonials Section Example', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_section_guide_callback',
         'page'     => 'testimonials_section_content',
         'section'  => 'testimonials_section',
         'args'     => [
             'label_for'   => 'testimonials_section_guide',
-            'class'       => 'mohamdy-section-guide',
+            'class'       => 'mohamdy-portfolio-section-guide',
             'option_name' => 'testimonials_options',
         ]
     ],
     [
         'id'       => 'show_testimonials_section',
-        'title'    => __('Show testimonials Section', 'mohamdy'),
-        'callback' => 'mohamdy_checkbox_element_callback',
+        'title'    => __('Show testimonials Section', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_checkbox_element_callback',
         'page'     => 'testimonials_section_content',
         'section'  => 'testimonials_section',
         'args'     => [
@@ -46,8 +46,8 @@ $testimonials_fields = [
     ],
     [
         'id' => 'testimonials_section_title',
-        'title'  => __('Add Section Title', 'mohamdy'),
-        'callback' => 'mohamdy_text_element_callback',
+        'title'  => __('Add Section Title', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_text_element_callback',
         'page'  => 'testimonials_section_content',
         'section'  => 'testimonials_section',
         'args'     => [
@@ -58,8 +58,8 @@ $testimonials_fields = [
     ],
     [
         'id' => 'testimonials_section_icon',
-        'title'  => __('Add Section Icon', 'mohamdy'),
-        'callback' => 'mohamdy_text_element_callback',
+        'title'  => __('Add Section Icon', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_text_element_callback',
         'page'  => 'testimonials_section_content',
         'section'  => 'testimonials_section',
         'args'     => [
@@ -73,8 +73,8 @@ $testimonials_fields = [
 $testimonials_dynamic_fields = [
     [
         'id' => 'client_name',
-        'title'  => __('Add Client Name *', 'mohamdy'),
-        'callback' => 'mohamdy_text_element_callback',
+        'title'  => __('Add Client Name *', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_text_element_callback',
         'page'  => 'testimonials_section_content',
         'section'  => 'testimonials_dynamic_section',
         'args'     => [
@@ -87,8 +87,8 @@ $testimonials_dynamic_fields = [
     ],
     [
         'id' => 'client_photo',
-        'title'  => __('Add Client Image', 'mohamdy'),
-        'callback' => 'mohamdy_image_element_callback',
+        'title'  => __('Add Client Image', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_image_element_callback',
         'page'  => 'testimonials_section_content',
         'section'  => 'testimonials_dynamic_section',
         'args'     => [
@@ -99,8 +99,8 @@ $testimonials_dynamic_fields = [
     ],
     [
         'id' => 'job_title',
-        'title'  => __('Add Job Title', 'mohamdy'),
-        'callback' => 'mohamdy_text_element_callback',
+        'title'  => __('Add Job Title', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_text_element_callback',
         'page'  => 'testimonials_section_content',
         'section'  => 'testimonials_dynamic_section',
         'args'     => [
@@ -111,8 +111,8 @@ $testimonials_dynamic_fields = [
     ],
     [
         'id' => 'client_rate',
-        'title'  => __('Add Rate(between 1 and 5)', 'mohamdy'),
-        'callback' => 'mohamdy_num_element_callback',
+        'title'  => __('Add Rate(between 1 and 5)', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_num_element_callback',
         'page'  => 'testimonials_section_content',
         'section'  => 'testimonials_dynamic_section',
         'args'     => [
@@ -126,8 +126,8 @@ $testimonials_dynamic_fields = [
     ],
     [
         'id' => 'client_review',
-        'title'  => __('Add Client review', 'mohamdy'),
-        'callback' => 'mohamdy_textarea_element_callback',
+        'title'  => __('Add Client review', 'mohamdy-portfolio'),
+        'callback' => 'mohamdy_portfolio_textarea_element_callback',
         'page'  => 'testimonials_section_content',
         'section'  => 'testimonials_dynamic_section',
         'args'     => [

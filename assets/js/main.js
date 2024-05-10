@@ -1,7 +1,7 @@
 // ********************   sidebar
 const sidebarAnchors = document.querySelectorAll('#sidebar ul.nav li a'),
     sections = document.querySelectorAll('section'),
-    mainContent = document.querySelector('main');
+    mainContent = document.querySelector('body');
 
 
 
