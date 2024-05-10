@@ -89,23 +89,21 @@ get_header();
         <div class="welcome col-lg-5">
           <p class="intro lh-lg text-body-secondary fs-6 my-3 py-3">__Introducing</p>
           <h2 class="hello">Hello ... </h2>
-          <h2 class="title mb-2 pb-2">I am <span id="name"><?php echo get_theme_mod('main_portfolio_name', '(Add your Name)'); ?></span></h2>
+          <h2 class="title mb-2 pb-2">I am <span id="name"><?php echo esc_html(get_theme_mod('main_portfolio_name', __('(Add your Name)', 'mohamdy-portfolio'))); ?></span></h2>
           <div class="job-title">
             <div class="text-container">
               <div class="content">
                 <div class="content__container">
                   <p class="content__container__text">
-                    <?php echo get_theme_mod('job_title', '(Add Job Title)')
-                    ?>
+                    <?php echo esc_html(get_theme_mod('job_title', __('(Add Job Title)', 'mohamdy-portfolio'))); ?>
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <!-- <p class="lh-lg text-body-secondary fs-5 my-3">I'm always up for a challenge, and I'm always learning new things. I'm confident that I can help you create a website that you'll be proud of.</p> -->
           <div class="skills">
             <?php
-            $skills = get_theme_mod('mohamdy_skills', []);
+            $skills = get_theme_mod('mohamdy_portfolio_skills', []);
 
             for ($x = 0; $x <= 5; $x++) {
               if (!isset($skills[$x])) continue;
@@ -185,6 +183,21 @@ get_header();
 
       <?php get_template_part('template_parts/cards'); ?>
 
+      <?php
+$args = array (
+	'before'      		=> '<div class="page-links-XXX"><span class="page-link-text">' . __( 'More pages: ', 'mohamdy-portfolio' ) . '</span>',
+	'after'       		=> '</div>',
+	'link_before' 		=> '<span class="page-link">',
+	'link_after'  		=> '</span>',
+	'next_or_number'	=> 'next',
+	'separator'			=> ' | ',
+	'nextpagelink'		=> __( 'Next &raquo', 'mohamdy-portfolio' ),
+	'previouspagelink'	=> __( '&laquo Previous', 'mohamdy-portfolio' ),
+);
+
+wp_link_pages( $args );
+?>
+
     </div> <!-- end container -->
 
 
@@ -202,44 +215,11 @@ get_header();
   </section>
 
 
-
   <!-- Testimonials Section -->
   <?php get_template_part('theme_sections/testimonials'); ?>
 
-
-
   <!-- Testimonials Section -->
   <?php get_template_part('theme_sections/statistics'); ?>
-
-  <!-- For future use -->
-  <section id="contact" class="">
-    <!-- Button trigger modal -->
-    <!-- <button type="button" class="mohamdy-contact-btn" data-bs-toggle="modal" data-bs-target="#contactModal">
-      Contact me
-    </button> -->
-
-    <!-- Modal -->
-    <!-- <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="contactModalLabel">Contact Me</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
-  </section>
-
-
-
 
   <?php
   get_footer();

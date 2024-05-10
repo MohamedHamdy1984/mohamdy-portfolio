@@ -12,7 +12,7 @@
                 ?>
             </div>
         </div>
-        <div class="mohamdy-sidebar col-md-7">
+        <div class="mohamdy-portfolio-sidebar col-md-7">
             <?php dynamic_sidebar(  ); ?>
         </div>
         <div class="social col-md-3">

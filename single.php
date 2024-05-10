@@ -16,7 +16,7 @@ get_header();
       }
       ?>
     </div>
-    <div class="content pb-5">
+    <div id="post-<?php the_ID(); ?>" <?php post_class( 'content pb-5 ' ); ?>>
       <?php the_content(); ?>
     </div>
   </div>
@@ -30,7 +30,7 @@ get_header();
           <div class="p-3">
             <h6>
               <?php printf(
-                _n('%s Comment', '%s Comments', get_comments_number(), 'mohamdy'),
+                _n('%s Comment', '%s Comments', get_comments_number(), 'mohamdy-portfolio'),
                 number_format_i18n(get_comments_number())
               ); ?>
             </h6>

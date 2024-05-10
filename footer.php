@@ -4,5 +4,7 @@
     </footer>
 </main>
 <?php wp_footer() ?>
+
+</div>  <!-- End of main container div -->
 </body>
 </html>
