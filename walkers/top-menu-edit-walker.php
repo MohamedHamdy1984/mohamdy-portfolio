@@ -7,7 +7,7 @@
  *
  * @see Walker_Nav_Menu
  */
-class Mohamdy_Top_Menu_Edit_Walker extends Walker_Nav_Menu {
+class mohamdy_portfolio_Top_Menu_Edit_Walker extends Walker_Nav_Menu {
 	/**
 	 * Starts the list before the elements are added.
 	 *
@@ -322,7 +322,7 @@ class Mohamdy_Top_Menu_Edit_Walker extends Walker_Nav_Menu {
 }
 
 add_filter( 'wp_edit_nav_menu_walker', function($class){
-	$class = 'Mohamdy_Top_Menu_Edit_Walker';
+	$class = 'mohamdy_portfolio_Top_Menu_Edit_Walker';
 	return $class;
 });
 

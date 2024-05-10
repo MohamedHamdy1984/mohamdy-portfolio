@@ -1,6 +1,5 @@
 <?php
-
-class Mohamdy_Top_Menu_Walker extends Walker_Nav_Menu {
+class mohamdy_portfolio_Top_Menu_Walker extends Walker_Nav_Menu {
 
 	/**
 	 * Starts the list before the elements are added.
