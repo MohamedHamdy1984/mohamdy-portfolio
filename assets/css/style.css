@@ -361,7 +361,7 @@ animation-iteration-count: infinite;
 
 
 #home .photo{
-    background-image: url(../img/home_section/vecteezy_man-face-clipart-design-illustration_9383461.png);
+    background-image: url(../img/home_section/pexels-photo-2379005.jpeg);
     background-size: cover;
     background-position: center center;
     position: relative;
@@ -380,7 +380,7 @@ animation-iteration-count: infinite;
 
 @media (min-width: 992px) { 
     #home .wrapper .photo{
-        background-image: url(../img/home_section/vecteezy_man-face-clipart-design-illustration_9383461.png);
+        background-image: url(../img/home_section/pexels-photo-2379005.jpeg);
         background-size: cover;
         background-position: center center;
         position: relative;
