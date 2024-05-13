@@ -34,7 +34,7 @@ if (have_comments()) {
         wp_list_comments([
             'avatar_size' => 50,
             'style'       => 'div',
-            'callback'    => 'mohamdy-portfolio_comment_callback',
+            'callback'    => 'mohamdy_portfolio_comment_callback',
             'max_depth'   => 2
         ]);
         ?>
